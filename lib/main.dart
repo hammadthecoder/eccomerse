@@ -1,6 +1,5 @@
 
 import 'package:eccomerse/screens/bottom_bar.dart';
-import 'package:eccomerse/screens/cart.dart';
 import 'package:flutter/material.dart';
 
 void main() {

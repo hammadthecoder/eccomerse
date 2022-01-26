@@ -1,20 +1,21 @@
+import 'package:eccomerse/consts/my_icons.dart';
 import 'package:eccomerse/screens/search.dart';
 import 'package:eccomerse/screens/user_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
-import '../consts/my_icons.dart';
+
+
 import 'cart.dart';
 import 'feeds.dart';
 import 'home.dart';
-
 class BottomBarScreen extends StatefulWidget {
   @override
   _BottomBarScreenState createState() => _BottomBarScreenState();
 }
 
 class _BottomBarScreenState extends State<BottomBarScreen> {
-  List<Map<String, Object>> _pages;
+  late List<Map<String, dynamic>> _pages;
   int _selectedPageIndex = 0;
 
   @override
@@ -48,7 +49,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedPageIndex]!['page'],
+      body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomAppBar(
         // color: Colors.white,
         shape: CircularNotchedRectangle(),
@@ -75,26 +76,24 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
               items: [
                 BottomNavigationBarItem(
                   icon: Icon(MyAppIcons.home),
-                  title: Text('Home'),
+                  label: 'Home',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(MyAppIcons.rss),
-                  title: Text('Feeds'),
+                  label: 'Feeds',
                 ),
                 BottomNavigationBarItem(
-                  activeIcon: null,
                   icon: Icon(null),
-                  title: Text('Search'),
+                  label: 'Search',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(
-                    MyAppIcons.cart,
+                  icon: Icon(MyAppIcons.cart,
                   ),
-                  title: Text('Cart'),
+                  label: 'Cart',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(MyAppIcons.user),
-                  title: Text('User'),
+                  label: 'User',
                 ),
               ],
             ),
@@ -102,7 +101,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
         ),
       ),
       floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterDocked,
+      FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(8.0),
         child: FloatingActionButton(
