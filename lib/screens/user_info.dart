@@ -1,13 +1,36 @@
 import 'package:flutter/material.dart';
 
-class userInfo extends StatelessWidget{
+class UserInfo extends StatelessWidget {
   @override
-Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('User Info')
+          child: Text('User info')
       ),
-
     );
-}
+  }
+
+  Widget userInfoList(
+      String title,
+      String subTitle,
+      int index,
+      ) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        splashColor: Colors.grey.shade300,
+        onTap: () {},
+        child: ListTile(
+          title: Text(title),
+          subtitle: Text(subTitle == null ? 'Empty' : subTitle),
+          leading: Icon(Icons.access_alarm),
+          // trailing: IconButton(
+          //   icon: Icon(Icons.edit),
+          //   onPressed: () {},
+          // ),
+        ),
+      ),
+    );
+  }
+
 }
