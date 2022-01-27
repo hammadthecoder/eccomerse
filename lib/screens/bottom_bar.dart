@@ -16,7 +16,7 @@ class BottomBarScreen extends StatefulWidget {
 
 class _BottomBarScreenState extends State<BottomBarScreen> {
   late List<Map<String, dynamic>> _pages;
-  int _selectedPageIndex = 0;
+  int _selectedPageIndex =4;
 
   @override
   void initState() {
