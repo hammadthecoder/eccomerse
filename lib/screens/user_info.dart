@@ -1,7 +1,9 @@
 import 'package:eccomerse/consts/colors.dart';
+import 'package:eccomerse/provider/dar_theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:list_tile_switch/list_tile_switch.dart';
+import 'package:provider/provider.dart';
 
 class UserInfo extends StatefulWidget {
   @override
@@ -11,7 +13,7 @@ class UserInfo extends StatefulWidget {
 late String name;
 
 class _UserInfoState extends State<UserInfo> {
-  bool _value = false;
+
   late ScrollController _scrollController;
   var top = 0.0;
   @override
@@ -26,6 +28,7 @@ class _UserInfoState extends State<UserInfo> {
 
   @override
   Widget build(BuildContext context) {
+    final themeChange = Provider.of<DarkThemeProvider>(context);
     return Scaffold(
       body: Stack(
         children: [
@@ -137,11 +140,11 @@ class _UserInfoState extends State<UserInfo> {
                       color: Colors.grey,
                     ),
                     ListTileSwitch(
-                      value: _value,
+                      value: themeChange.darkTheme,
                       leading: Icon(Ionicons.md_moon),
                       onChanged: (value) {
                         setState(() {
-                          _value = value;
+                          themeChange.darkTheme = value;
                         });
                       },
                       visualDensity: VisualDensity.comfortable,
