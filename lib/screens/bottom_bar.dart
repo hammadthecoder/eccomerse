@@ -89,7 +89,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                 BottomNavigationBarItem(
                   icon: Icon(MyAppIcons.bag,
                   ),
-                  label: 'Cart',
+                  label: 'C ',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(MyAppIcons.user),
